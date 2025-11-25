@@ -1,0 +1,288 @@
+:root {
+    --primary-color: #ffb347;
+    --secondary-color: #ffcc33;
+    --accent-color: #fff9b0;
+    --text-color: #4a4a4a;
+    --bg-gradient: linear-gradient(120deg, #fffc00 0%, #ffffff 100%);
+    /* 爽やかな黄色から白へ */
+    --card-bg: rgba(255, 255, 255, 0.95);
+    --font-main: 'Zen Maru Gothic', sans-serif;
+    --success-color: #4caf50;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+    /* フォールバック */
+    background: linear-gradient(135deg, #fff6b7 0%, #f37335 100%);
+    /* 朝日のような黄色〜オレンジ */
+    background: linear-gradient(to bottom right, #FFEEEE 0%, #DDEFBB 100%);
+    /* 爽やかな朝 */
+    background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+    /* 元の色 */
+    background: linear-gradient(to right, #ffefba, #ffffff);
+    /* 決定：爽やかな黄色 */
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.app-container {
+    background-color: var(--card-bg);
+    width: 100%;
+    max-width: 700px;
+    /* 少し幅を広げる */
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    animation: fadeIn 0.8s ease-out;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #ff9800;
+    /* オレンジ寄りの黄色 */
+    margin-bottom: 10px;
+    letter-spacing: 0.05em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: #888;
+}
+
+/* 名言セクション */
+.quote-section {
+    text-align: center;
+    padding: 20px;
+    background-color: #fffde7;
+    /* 薄い黄色 */
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border-left: 5px solid #ffb347;
+    animation: slideIn 0.6s ease-out;
+}
+
+.quote-text {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #555;
+    font-style: italic;
+}
+
+/* グラフセクション */
+.progress-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+}
+
+.progress-info {
+    flex: 1;
+}
+
+.progress-info h3 {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.progress-text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.chart-container {
+    width: 80px;
+    height: 80px;
+    position: relative;
+}
+
+.circular-chart {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.circle-bg {
+    fill: none;
+    stroke: #eee;
+    stroke-width: 3.8;
+}
+
+.circle {
+    fill: none;
+    stroke-width: 2.8;
+    stroke-linecap: round;
+    animation: progress 1s ease-out forwards;
+    stroke: var(--success-color);
+    /* 達成時は緑、通常はプライマリなどJSで制御も可 */
+}
+
+@keyframes progress {
+    0% {
+        stroke-dasharray: 0 100;
+    }
+}
+
+.percentage {
+    fill: #666;
+    font-family: var(--font-main);
+    font-weight: bold;
+    font-size: 0.5em;
+    text-anchor: middle;
+}
+
+.input-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 15px 20px;
+    border: 2px solid #eee;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: var(--font-main);
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+input[type="text"]:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(255, 179, 71, 0.2);
+}
+
+button {
+    padding: 15px 30px;
+    background: linear-gradient(to right, #ffb347 0%, #ffcc33 100%);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-family: var(--font-main);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 179, 71, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.tasks-container h2 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #666;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.task-list {
+    list-style: none;
+}
+
+.task-item {
+    background: white;
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    animation: slideIn 0.4s ease-out;
+    border-left: 4px solid transparent;
+}
+
+.task-item:hover {
+    transform: translateX(5px);
+    border-left-color: var(--primary-color);
+}
+
+.task-item.completed {
+    background: #f9f9f9;
+    color: #ccc;
+    text-decoration: line-through;
+    border-left-color: var(--success-color);
+}
+
+.delete-btn {
+    background: none;
+    color: #ff6b6b;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    opacity: 0.6;
+}
+
+.delete-btn:hover {
+    background: none;
+    opacity: 1;
+    transform: none;
+    box-shadow: none;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

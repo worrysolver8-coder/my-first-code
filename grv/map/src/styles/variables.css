@@ -1,0 +1,50 @@
+:root {
+  /* Colors */
+  --color-bg-start: #fdfbfb;
+  --color-bg-end: #ebedee;
+  --color-bg-gradient: linear-gradient(135deg, #fff1eb 0%, #ace0f9 100%);
+
+  --color-text-primary: #2c3e50;
+  --color-text-secondary: #7f8c8d;
+  --color-text-light: #ffffff;
+
+  --color-accent: #a29bfe;
+  --color-accent-hover: #6c5ce7;
+  --color-success: #00b894;
+  --color-danger: #ff7675;
+  --color-warning: #ffeaa7;
+
+  --color-card-bg: rgba(255, 255, 255, 0.8);
+  --color-card-border: rgba(255, 255, 255, 0.5);
+
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-dream: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  /* Typography */
+  --font-family-base: 'Quicksand', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  /* Optional: Dark mode adjustments if needed later, 
+     but for now keeping it "Bright/Dreamy" as requested */
+}

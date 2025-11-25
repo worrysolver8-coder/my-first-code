@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Tasks - 夢への一歩</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <header>
+            <h1>My Dream Journey</h1>
+            <p class="subtitle">夢を実現するための小さな一歩を、ここから。</p>
+        </header>
+
+        <main>
+            <!-- 名言セクション -->
+            <div class="quote-section">
+                <p id="dailyQuote" class="quote-text">Loading quote...</p>
+            </div>
+
+            <!-- 達成率グラフセクション -->
+            <div class="progress-section">
+                <div class="progress-info">
+                    <h3>夢への進捗</h3>
+                    <p id="progressText" class="progress-text">0%</p>
+                </div>
+                <div class="chart-container">
+                    <svg viewBox="0 0 36 36" class="circular-chart">
+                        <path class="circle-bg" d="M18 2.0845
+                               a 15.9155 15.9155 0 0 1 0 31.831
+                               a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <path id="progressCircle" class="circle" stroke-dasharray="0, 100" d="M18 2.0845
+                               a 15.9155 15.9155 0 0 1 0 31.831
+                               a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="input-section">
+                <input type="text" id="taskInput" placeholder="今日、夢のために何をしますか？">
+                <button id="addTaskBtn">追加</button>
+            </div>
+
+            <div class="tasks-container">
+                <h2>To Do</h2>
+                <ul id="taskList" class="task-list">
+                    <!-- タスクはここに追加されます -->
+                </ul>
+            </div>
+        </main>
+
+        <footer>
+            <p>Believe in yourself.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
